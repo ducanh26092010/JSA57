@@ -18,40 +18,41 @@
       individually. This was the last time when you are allowed to promote
       something urgent in the production when you was asked for.
     </p>
+
+    <!-- add js internal -->
     <script>
-        const data = document.getElementById("data");
-        const dataText = data.innerText;
-        
-        
-        
-        const words = dataText.split(" ");
-        console.log("So luong tu:", words.length);
-        const sentences = dataText.split(". ");
-        console.log(sentences);
-        
+      // lay du lieu tu html dom
+      // document: lay toan bo tag html trong web page
+      // element: la 1 the/ tag trong html
+      const data = document.getElementById("data");
+      const dataText = data.innerText;
 
+      // tach chuoi (split("...")) -> tra ve mang -------------------
+      const words = dataText.split(" ");
+      console.log("So luong tu:", words.length);
+      const sentences = dataText.split(". ");
+      console.log(sentences);
 
-        const newWords = words[15] + " " + words[136];
-        console.log("Tu moi", newWords);
-        console.warn("10" + 20);
-        console.warn(20 - "10");
+      // gop chuoi ----------------------------------
+      const newWords = words[15] + " " + words[136];
+      console.log("Tu moi:", newWords);
+      console.warn("10" + 20); // chuoi + so -> chuoi
+      console.warn(20 - "10"); // chuoi - so -> so
 
+      // template string (ES6)
+      const templateStr = `Tu moi: ${words[40]} ${words[52]}`;
+      console.log(templateStr);
 
+      // dem ki tu trong chuoi -----------------------
+      console.error("So ki tu: ", dataText.length); // bao gom khoang trang, dau cham, dau phay, ...
 
-        const templateStr = `Tu moi: ${words[40]} ${words[52]}`;
-        console.log(templateStr);
+      // viet hoa/ thuong chuoi
+      // data.innerText = dataText.toLowerCase(); // viet thuong
+      data.innerText = dataText.toUpperCase(); // viet hoa
 
-
-
-        console.error("So ki tu: ", dataText.length);
-
-
-        <!-- data.innerText = dataText.toLowerCase(); -->
-        data.innerText = dataText.toUpperCase();
-
-
-        const newText = "                     . ." + words[34] + ".       ";
-        console.log(newText.trim());
+      // loai bo khoang trang (dau/ duoi)
+      const newText = "                     . ." + words[34] + ".    ";
+      console.log(newText.trim());
     </script>
   </body>
 </html>
