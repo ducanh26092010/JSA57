@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dự báo Thời tiết</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+
+    <div class="container my-5">
+        <h1 class="text-center mb-4 text-primary">Dự báo Thời tiết</h1>
+        
+        <div class="card p-4 shadow-lg mb-5 mx-auto" style="max-width: 500px;">
+            <div class="input-group mb-3">
+                <input type="text" id="cityInput" class="form-control" placeholder="Nhập tên thành phố (ví dụ: Hanoi, London)" aria-label="Tên thành phố">
+                <button class="btn btn-primary" type="button" id="searchButton">
+                    Tìm kiếm
+                </button>
+            </div>
+            <button class="btn btn-success w-100" type="button" id="locationButton">
+                Kích hoạt Định vị 🗺️
+            </button>
+        </div>
+
+        <div class="card p-4 shadow-lg d-none mx-auto" id="weatherCard" style="max-width: 500px;">
+            <h2 class="card-title text-center" id="cityName"></h2>
+            <div class="text-center my-3">
+                <img id="weatherIcon" src="" alt="Icon Thời tiết" class="img-fluid" style="width: 100px;">
+                <p class="h1 mb-0" id="temperature"></p>
+                <p class="lead" id="weatherDescription"></p>
+            </div>
+            <hr>
+            <div class="row text-center">
+                <div class="col-6">
+                    <p class="mb-0 fw-bold">Độ ẩm:</p>
+                    <p id="humidity"></p>
+                </div>
+                <div class="col-6">
+                    <p class="mb-0 fw-bold">Tốc độ gió:</p>
+                    <p id="windSpeed"></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="errorMessage" class="alert alert-danger d-none mx-auto" role="alert" style="max-width: 500px;">
+            Không thể lấy thông tin thời tiết. Vui lòng thử lại!
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
